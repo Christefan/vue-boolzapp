@@ -5,24 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="list-sx">
             <div class="list-user">
-            <div class="bar-user"></div>
-            <div class="notice"></div>
-            <div class="research"></div>
+            <div class="bar-user">
+                <div class="user">
+                    <img class="circle" src="img/avatar_1.jpg" alt="" srcset="">
+                    <span class="username">Name</span>   
+                </div>
+                <div class="font-aw">
+                    <i class="fas fa-circle-notch"></i>                            
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i> 
+                </div>
+            </div>
+            <div class="notice">
+                <div class="circle-notice">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="text-notice">
+                    <p class="text-notice-top">Ricevi notifiche di nuovi messaggi</p>
+                    <a href="" class="text-notice-bottom">Attiva notifiche desktop</a>
+                </div>
+            </div>
+            <div class="research">
+                <div class="button-research">
+                    <button  type="button"> <i class="fas fa-search"></i></button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="">
+            </div>
             </div>
             <div class="list-chat">
-                <div class="contact"></div>
+                <div class="contact">
+                    <div>
+                        <img class="contact-img-cirlce" src="img/avatar_1.jpg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-name">
+                            Name
+                        </div>
+                        <div>
+                            Ultimo messaggio inviato
+                        </div>
+                    </div>
+                    <div class="contact-time">
+                        12:00
+                    </div>
+                </div>
             </div>
         </div>
         <div class="chat-dx">
-            <div class="bar-user"></div>
+            <div class="bar-user">
+                <div class="user">
+                    <img class="circle" src="img/avatar_1.jpg" alt="" srcset="">
+                    <span class="username">Name</span>   
+                </div>
+                <div class="font-aw">
+                    <i class="fas fa-search"></i>                            
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i> 
+                </div>
+        
+            </div>
             <div class="chat-user"></div>
-            <div class="chat-write"></div>
+            <div class="chat-write">
+    	        <i class="far fa-smile"></i>
+              
+              
+                <input class="new-message" type="text" placeholder="Scrivi un messaggio">
+                
+              
+                <i class="fas fa-microphone"></i>
+                
+            </div>
         </div>
     </div>
 </body>
