@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(-180deg, #656565, #32ff04);
+    background: linear-gradient(0deg, #32ff04,#656565);
 }
 
 .container{
@@ -38,7 +38,7 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #ef8bef;
+    background-color: white;
     margin-left: 10px;
     display: flex; 
     align-items: center; 
@@ -48,7 +48,7 @@ body {
 }
 
 .list-sx{
-    background-color: aqua;
+    background-color: white;
     width: 30%;
     height: 100%;
     border-right:1px solid #656565;
@@ -59,7 +59,7 @@ body {
     height: 20%;
 }
 .bar-user{
-    background-color: #32ff04;
+    background-color: #d3d3d3;
     width: 100%;
     height: 60px;
     display: flex;
@@ -77,14 +77,14 @@ body {
     margin: 15px;
 }
 .notice{
-    background-color: deepskyblue;
+    background-color: #8edafc;
     height: 80px;
     display: flex; 
     align-items: center; 
-
+    justify-content: flex-start;
 }
 .research{
-    background-color: white;
+    background-color: #ffffff;
     height: 40px;
     display: flex;
     align-items: center;
@@ -93,15 +93,16 @@ body {
 
 /* Lista delle chat con l'utente*/
 .list-chat{
-    background-color: black;
-     height: calc(100% - 20%);
+    /* background-color: black; */
+     height: calc(100% - 180px);
      overflow-y: auto;
 }
 .contact{
-    background-color: deeppink;
+    background-color: rgb(177, 177, 177); 
     height: 80px;
     display: flex;
     align-items: center;
+    border-top:2px solid rgb(110, 110, 110) ;
 }
 .contact-img-cirlce{
     width: 55px;
@@ -113,6 +114,9 @@ body {
 .contact-info{
     margin-top: -1rem;
 }
+.grey{
+    color: #808080;
+}
 
 /* -------------------------------------------------------------------------------------------- */
 .chat-dx{
@@ -121,11 +125,34 @@ body {
     height: 100%;
 }
 .chat-user{
-    background-color: sandybrown;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/mine.jpg);
     height: calc(100% - 135px);
 }
+.row-chat-message {
+    display: flex;
+}
+.message_box{
+    min-width: 250px;
+    max-width:60% ;
+    padding: 10px;
+}
+.message--sent{
+    justify-content: flex-end;
+}
+.message--received{
+    justify-content: flex-start;
+}
+.message--sent .message_box{
+    background-color: #9bed88;
+}
+.message--received .message_box{
+    background-color: #ffffff;
+}
+
 .chat-write{
-    background-color: blue;
+    background-color: #d3d3d3;
     height: 75px;
     display: flex;
     align-items: center;

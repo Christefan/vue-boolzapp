@@ -7,11 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="root">
         <div class="list-sx">
-            <div class="list-user">
             <div class="bar-user">
                 <div class="user">
                     <img class="circle" src="img/avatar_1.jpg" alt="" srcset="">
@@ -38,17 +38,17 @@
                   </div>
                   <input type="text" class="form-control" placeholder="">
             </div>
-            </div>
+            
             <div class="list-chat">
-                <div class="contact">
+                <div class="contact" v-for="(items,index) in contacts"  @click="select_Chat(index)">
                     <div>
-                        <img class="contact-img-cirlce" src="img/avatar_1.jpg" alt="">
+                        <img class="contact-img-cirlce" :src="'img/avatar'+ items.avatar +'.jpg'" >
                     </div>
                     <div class="contact-info">
                         <div class="contact-name">
-                            Name
+                            {{items.name}}
                         </div>
-                        <div>
+                        <div class="contact-message">
                             Ultimo messaggio inviato
                         </div>
                     </div>
@@ -71,7 +71,18 @@
                 </div>
         
             </div>
-            <div class="chat-user"></div>
+            <div class="chat-user">
+                 <div class="row-chat-message" v-for="(items,index) in contacts[chat_select].messages" :class="items.status === 'sent' ? 'message--sent' : 'message--received'">
+                    <div class="message_box">
+                        <div class="message_text">
+                            {{ items.message }}
+                        </div>
+                        <div class="message_time">
+                            {{ items.date }}
+                        </div>
+                    </div>
+                 </div>
+            </div>
             <div class="chat-write">
     	        <i class="far fa-smile"></i>
               
@@ -83,6 +94,7 @@
                 
             </div>
         </div>
-    </div>
+
+    <script src="js/data.js"></script>
 </body>
 </html>
