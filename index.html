@@ -87,7 +87,7 @@
     	        <i class="far fa-smile"></i>
               
               
-                <input class="new-message" type="text" placeholder="Scrivi un messaggio">
+                <input class="new-message" v-model="addMessage" @keyup.enter="addnewMessage" type="text" placeholder="Scrivi un messaggio">
                 
               
                 <i class="fas fa-microphone"></i>

@@ -165,10 +165,30 @@ const app = new Vue({
             }
         ],
          chat_select : 0,
+         addMessage:'',
 },
 methods:{
     select_Chat: function(index){
         this.chat_select = index
+    },
+    addnewMessage: function(){
+        const newMessage = {
+            date: 'Prova',
+            message: this.addMessage,
+            status: 'sent'
+
+        }
+        console.log(newMessage)
+        this.contacts[this.chat_select].messages.push(newMessage)
+        setTimeout(this.responsivTimeMessage,100)
+    },
+    responsivTimeMessage: function(){
+        const newMessage = {
+            date: 'Prova',
+            message: 'ok',
+            status: 'received'
+        }
+        this.contacts[this.chat_select].messages.push(newMessage)
     }
 }
    

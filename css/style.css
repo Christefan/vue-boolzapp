@@ -129,6 +129,7 @@ body {
     flex-direction: column;
     background-image: url(../img/mine.jpg);
     height: calc(100% - 135px);
+    overflow-y: auto;
 }
 .row-chat-message {
     display: flex;
