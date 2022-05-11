@@ -166,6 +166,7 @@ const app = new Vue({
         ],
          chat_select : 0,
          addMessage:'',
+         search:'',
 },
 methods:{
     select_Chat: function(index){
@@ -173,7 +174,7 @@ methods:{
     },
     addnewMessage: function(){
         const newMessage = {
-            date: 'Prova',
+            date: '10/01/2020 15:53:00',
             message: this.addMessage,
             status: 'sent'
 
@@ -184,12 +185,25 @@ methods:{
     },
     responsivTimeMessage: function(){
         const newMessage = {
-            date: 'Prova',
+            date: '10/01/2020 15:53:01',
             message: 'ok',
             status: 'received'
         }
         this.contacts[this.chat_select].messages.push(newMessage)
-    }
+    },
+    filterChat: function () {
+        console.log(this.search);
+        this.contacts.forEach((element) => {
+          const formattedText = element.name.toLowerCase();
+          const formattedSearch = this.search.toLowerCase();
+          if (formattedText.includes(formattedSearch)) {
+            element.visible = true;
+          } else {
+            element.visible = false;
+          }
+        });
+      },
+    
 }
    
 

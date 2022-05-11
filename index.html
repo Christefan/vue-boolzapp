@@ -33,14 +33,15 @@
                 </div>
             </div>
             <div class="research">
-                <div class="button-research">
-                    <button  type="button"> <i class="fas fa-search"></i></button>
-                  </div>
-                  <input type="text" class="form-control" placeholder="">
+                    <button @click="filterChat" type="button"> <i class="fas fa-search"></i></button>
+            
+                  <input type="text" class="form-control" placeholder=""
+                  @keyup.enter="filterChat" v-model="search">
             </div>
             
             <div class="list-chat">
-                <div class="contact" v-for="(items,index) in contacts"  @click="select_Chat(index)">
+                <div class="contact" v-for="(items,index) in contacts"  @click="select_Chat(index)"
+                v-if="items.visible">
                     <div>
                         <img class="contact-img-cirlce" :src="'img/avatar'+ items.avatar +'.jpg'" >
                     </div>
