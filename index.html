@@ -62,8 +62,11 @@
         <div class="chat-dx">
             <div class="bar-user">
                 <div class="user">
-                    <img class="circle" src="img/avatar_1.jpg" alt="" srcset="">
-                    <span class="username">Name</span>   
+                    <img class="circle" :src="'img/avatar'+ contacts[chat_select].avatar +'.jpg'" alt="">
+                    <div>
+                    <span class="username"> {{contacts[chat_select].name}}</span> 
+                    <span>Ultimo accesso alle 12:00</span>
+                    </div>  
                 </div>
                 <div class="font-aw">
                     <i class="fas fa-search"></i>                            
@@ -80,6 +83,14 @@
                         </div>
                         <div class="message_time">
                             {{ items.date }}
+                        </div>
+                        <div>
+                            <i class="fas fa-chevron-down"  @click="showOption(index)"></i>
+                            <div 
+                            v-show="val === index"
+                            class="delete-message">
+                            <div>info</div>
+                            <div @click="deleteElement(index)">Elimina messaggio</div></div>
                         </div>
                     </div>
                  </div>

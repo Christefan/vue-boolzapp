@@ -167,7 +167,19 @@ const app = new Vue({
          chat_select : 0,
          addMessage:'',
          search:'',
+         showMenu : false,
+         val:null,
 },
+
+// computed: {
+//     showOthers() {
+//    const printicon = document.getElementsByClassName('delete-message');
+//    if (printicon.style.display === 'none') {
+//      return true;
+//    }
+//    return false;
+//    }
+// },
 methods:{
     select_Chat: function(index){
         this.chat_select = index
@@ -182,6 +194,7 @@ methods:{
         console.log(newMessage)
         this.contacts[this.chat_select].messages.push(newMessage)
         setTimeout(this.responsivTimeMessage,100)
+        this.addMessage='';
     },
     responsivTimeMessage: function(){
         const newMessage = {
@@ -203,7 +216,18 @@ methods:{
           }
         });
       },
+      showOption(index) {
+        
+       if(this.val === index){
+        this.showMenu=true;
+        }else{
+        this.val=index;
+        }
+            },
     
+            deleteElement(index){
+                this.contacts[this.chat_select].messages.splice(index,1);
+            },
 }
    
 

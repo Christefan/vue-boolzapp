@@ -9,7 +9,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(0deg, #32ff04,#656565);
+    background: linear-gradient(to bottom,
+     #32ff04 0vh,
+     #32ff04 15vh,
+     #656565 15vh,
+     #656565 100%);
 }
 
 .container{
@@ -20,7 +24,7 @@ body {
     margin: 0 auto;
     /* background-color: aqua; */
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: relative;
 }
 
@@ -133,11 +137,14 @@ body {
 }
 .row-chat-message {
     display: flex;
+    width: 80%;
+    margin-left: 80px;
 }
 .message_box{
     min-width: 250px;
     max-width:60% ;
     padding: 10px;
+    margin: 10px;
 }
 .message--sent{
     justify-content: flex-end;
@@ -158,4 +165,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+
+.delete-message{
+    background-color: white;
+    top: 35px;
+    right: 10px;
+    z-index: 1000;
 }
